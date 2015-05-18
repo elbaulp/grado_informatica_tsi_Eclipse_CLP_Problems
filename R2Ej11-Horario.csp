@@ -1,0 +1,15 @@
+:- lib(fd).
+profesores(Vars):-
+	% Variables
+	Vars=[Pedro, Juana, Ana, Yago, David,Maria],
+	Pedro #:: [3..6],
+	Juana #:: [3..4],
+	Ana #:: [2..5],
+	Yago #:: [2..4],
+	David #:: [3..4],
+	Maria #:: [1..6],
+
+	Juana + Ana + Maria #= T,
+
+	alldifferent(Vars),
+	minimize(labeling(Vars),T).
